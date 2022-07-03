@@ -1,0 +1,651 @@
+/* FONTS */
+/* Inter Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Space Mono Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "sfMono";
+  font-weight: 200;
+  src: url(/sf-mono-cufonfonts-webfont/SFMonoRegular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "sfMono";
+  font-weight: 300;
+  src: url(/sf-mono-cufonfonts-webfont/SFMonoLight.woff) format("woff");
+}
+
+@font-face {
+  font-family: "sfMono";
+  font-weight: 400;
+  src: url(/sf-mono-cufonfonts-webfont/SFMonoMedium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "sfMono";
+  font-weight: 500;
+  src: url(/sf-mono-cufonfonts-webfont/SFMonoSemibold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "sfMono";
+  font-weight: 600;
+  src: url(/sf-mono-cufonfonts-webfont/SFMonoBold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "sfMono";
+  font-weight: 700;
+  src: url(/sf-mono-cufonfonts-webfont/SFMonoHeavy.woff) format("woff");
+}
+
+// Brand Colors
+$primaryColor: #0a192f;
+$secColor: #64ffda;
+$textColor: #ccd6f6;
+$text2Color: #8892b0;
+
+//font stack
+$fontStack1: "Inter", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+$fontStack2: "sfMono", "SpaceMono", "Lucida Sans", "Lucida Sans Regular",
+  "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+//Transition
+$transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// CSS Reset
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: $fontStack1;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $primaryColor;
+}
+
+//Hover Underline Animation
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: $secColor;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.1px;
+  bottom: 3px;
+  left: 0;
+  background-color: $secColor;
+  transform-origin: bottom right;
+  transition: $transition;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+// Navigation section
+header {
+  .logo-wrapper img {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  nav {
+    background-color: $primaryColor;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    z-index: 1000;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    li {
+      a {
+        text-decoration: none;
+        color: $textColor;
+        margin: 0.7rem 1.6rem;
+        transition: $transition;
+        font-family: $fontStack2;
+        &:hover {
+          color: $secColor;
+        }
+        span {
+          color: $secColor;
+          padding-right: 5px;
+          font-family: inherit;
+        }
+      }
+    }
+  }
+
+  .resumebutton {
+    color: $secColor;
+    border: 1px solid $secColor;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    margin-right: 0rem;
+    transition: $transition;
+    font-family: $fontStack2;
+
+    &:hover {
+      background-color: transparentize(
+        $secColor,
+        0.9
+      ); //to make a color transparent
+    }
+  }
+}
+
+// Side Social Links
+.fixedsocials {
+  .socials {
+    display: flex;
+    flex-direction: column;
+    width: 1.5rem;
+    position: fixed;
+    justify-content: center;
+    bottom: 0rem;
+    left: 2.2rem;
+
+    ul {
+      list-style-type: none;
+      li {
+        padding-bottom: 1rem;
+        a {
+          font-family: $fontStack2;
+          svg {
+            color: $textColor;
+            width: 1.3rem;
+            height: 1.3rem;
+            transition: $transition;
+
+            &:hover {
+              color: $secColor;
+              margin-top: 0.1rem;
+              transform: translateY(0.1rem);
+            }
+          }
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 2.5rem;
+      margin: 0px auto;
+      background-color: $textColor;
+    }
+  }
+
+  .email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    position: fixed;
+    bottom: 0rem;
+    right: 2.2rem;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+      color: $textColor;
+      letter-spacing: 0.25rem;
+      font-size: 0.75rem;
+      transition: $transition;
+      margin: 1rem auto;
+      text-align: center;
+      font-family: $fontStack2;
+
+      &:hover {
+        color: $secColor;
+        font-weight: 500;
+        transform: translateY(0.4rem);
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 2.5rem;
+      margin: 0px auto;
+      background-color: $textColor;
+    }
+  }
+}
+
+.desktoppad {
+  margin: auto 9rem;
+  padding-top: 10rem;
+}
+
+// Hero Section
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  justify-content: center;
+  min-height: 100vh;
+  color: $textColor;
+
+  .introname {
+    font-family: $fontStack2;
+    font-size: 1rem;
+    color: $secColor;
+    padding: 0 0 1.5rem 0;
+  }
+
+  .name {
+    color: $textColor;
+    font-size: 4.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .build {
+    color: $text2Color;
+    font-size: 4.5rem;
+  }
+
+  .about {
+    color: $text2Color;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    max-width: 600px; //change to responsive width later or not
+    margin-top: 1.5rem;
+    // font-weight: 200;
+  }
+
+  .herowork-button {
+    color: $secColor;
+    border: 1px solid $secColor;
+    border-radius: 0.25rem;
+    padding: 1.25rem 1.75rem;
+    margin-right: 0rem;
+    transition: $transition;
+    text-decoration: none;
+    width: fit-content;
+    margin-top: 3rem;
+    font-family: $fontStack2;
+
+    &:hover {
+      background-color: transparentize(
+        $secColor,
+        0.9
+      ); //to make a color transparent
+    }
+  }
+
+  .company {
+    color: $secColor;
+    text-decoration: none;
+  }
+}
+
+//General Section Styling
+.section-title {
+  font-family: $fontStack1;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  color: $textColor;
+
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 18rem;
+    height: 1px;
+    margin-left: 1rem;
+    background-color: $text2Color;
+  }
+}
+
+.section-numbering {
+  font-family: $fontStack2;
+  font-size: 1.2rem;
+  color: $secColor;
+  padding-right: 0.5rem;
+}
+
+// About Me Section
+
+#about {
+  margin-top: 5rem;
+
+  .about-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+    font-size: 0.85rem;
+    z-index: -1;
+
+    .about-img {
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      background-color: $secColor;
+     
+      border-radius: 4px;
+
+      img {
+        width: 300px;
+        border-radius: 4px;
+        opacity: 0.8;
+        z-index: -2;
+
+        &:hover {
+          opacity: 1;
+          background-color: $text2Color;
+        }
+        
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border: 2px solid $secColor;
+        border-radius: 0.3rem;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: -2;
+        transition: $transition;
+      }
+
+      &:hover::after {
+        top: 7px;
+        left: 7px;
+        
+      }
+    }
+  }
+
+  .company {
+    color: $secColor;
+    text-decoration: none;
+  }
+
+  h2 {
+    color: $textColor;
+    padding-bottom: 3rem;
+  }
+
+  .about-brief {
+    color: $text2Color;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.7rem;
+  }
+
+  ul.about-list {
+    list-style-type: none;
+
+    li.about-eachlist {
+      color: $text2Color;
+      font-size: 0.85rem;
+      line-height: 1.85rem;
+      position: relative;
+      padding-left: 1rem;
+
+      &::before {
+        content: "▹";
+        position: absolute;
+        left: 0px;
+        color: $secColor;
+      }
+    }
+  }
+}
+
+
+//Experience Section
+#experience{
+  .section-title{
+    padding-bottom: 3rem;
+  }
+  .each-expwrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    color: #8892b0;
+    padding: 1rem 0rem;
+    
+
+    .exp-title{
+      padding: 1rem;
+      border-left: 2px solid $secColor;
+      transition: $transition;
+      color: $secColor;
+      font-size: 0.9rem;
+      font-weight: 400;
+      width: 7rem;
+      font-family: $fontStack2;
+
+      &:hover{
+        background-color:transparentize(
+          $secColor,
+          0.9
+        ); //to make a color transparent
+      }
+    }
+
+    .exp-jobtitle{
+        color: $textColor;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+      span{
+        color: $secColor;
+        padding-bottom: 4px;
+      }
+    }
+
+    .exp-years{
+      color: $text2Color;
+      padding: 1rem 0rem;
+      font-family: $fontStack2;
+      font-size: 0.9rem;
+    }
+
+    .exp-brief{
+      font-size: 0.9rem;
+      position: relative;
+      padding-left: 1rem;
+      padding-bottom: 0.5rem;
+      line-height: 1.2rem;
+      max-width: 80%;
+
+      &::before {
+        content: "▹";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        color: $secColor;
+      }
+    }
+  }
+}
+
+// Work Section
+
+
+
+
+
+// Contact Section
+#contact{
+  // padding-top: 10rem;
+
+  h4{
+    text-align: center;
+    font-family: $fontStack2;
+    font-size: 0.9rem;
+    color: $secColor;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 200;
+  }
+
+  h2{
+    text-align: center;
+    font-family: $fontStack1;
+    font-size: 3rem;
+    font-weight: 700;
+    color: $textColor;
+    margin-bottom: 1rem;
+  }
+
+  p{
+    text-align: center;
+    font-family: $fontStack1;
+    color: $text2Color;
+    margin-bottom: 2rem;
+  }
+
+  .contact-wrapper{
+    
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input{
+        display: block;
+        outline: none;
+        border: 1px solid $secColor;
+        background-color: $primaryColor ;
+        color: $text2Color;
+        border-radius: 4px;
+
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+        width: 50%;
+        color: $textColor;
+
+        
+        transition: $transition;
+       
+        //Google autocomplete fix for background color
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+          transition: "color 9999s ease-out, background-color 9999s ease-out";
+          transition-delay: 9999s;
+        }
+
+        &::placeholder {
+          color: $text2Color;
+          font-size: 0.9rem;
+          font-weight: 300;
+        }
+
+        &:focus{
+          box-shadow: 0 0 0 4px transparentize(
+            $secColor,
+            0.8
+          );
+          background-color: $primaryColor;
+        }
+        
+      }
+
+      textarea{
+        display: block;
+        outline: none;
+        border: 1px solid $secColor;
+        background-color: transparent;
+        color: $text2Color;
+        border-radius: 4px;
+
+        padding: 1rem;
+        width: 50%;
+        color: $textColor;
+
+        // box-shadow:inset 0 0 4px $secColor;
+        transition: $transition;
+
+        &::placeholder {
+          color: $text2Color;
+          font-size: 0.9rem;
+          font-weight: 300;
+        }
+
+        &:focus{
+          box-shadow: 0 0 0 4px transparentize(
+            $secColor,
+            0.8
+          );
+        }
+      }
+
+      button[type=submit]{
+        display: block;
+        color: $secColor;
+        border: 1px solid $secColor;
+        background-color: transparent;
+        border-radius: 0.25rem;
+        padding: 1rem 1.3rem;
+        margin-right: 0rem;
+        transition: $transition;
+        text-decoration: none;
+        width: fit-content;
+        margin-top: 1rem;
+        font-family: $fontStack2;
+
+        &:hover {
+          background-color: transparentize(
+            $secColor,
+            0.9
+          ); //to make a color transparent
+        }
+      }
+   }
+  }
+}
+
+// footer Section
+
+footer{
+  p{
+    color: $text2Color;
+    text-align: center;
+    font-family: $fontStack2;
+    font-size: 0.8rem;
+    font-weight: 200;
+    margin: 3rem 0rem 1rem 0rem;
+
+    &:hover{
+      color: $secColor
+    }
+  }
+}
