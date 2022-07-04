@@ -45,6 +45,7 @@ $primaryColor: #0a192f;
 $secColor: #64ffda;
 $textColor: #ccd6f6;
 $text2Color: #8892b0;
+$cardbackgroundColor: #112240;
 
 //font stack
 $fontStack1: "Inter", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -496,8 +497,68 @@ header {
 }
 
 // Work Section
+#work{
 
+  .work-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    
+  }
 
+  h2{
+    padding-bottom: 3rem;
+  }
+
+  .each-work{
+    // max-width: 30rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 45%;
+    background-color: $cardbackgroundColor;
+
+ 
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+      .eachwork-brief h3{
+        color: $secColor;
+      }
+    }
+  
+    .eachwork-image{
+      width: 100%;
+      height: 80%;
+      overflow: hidden;
+      img{ 
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .eachwork-brief{
+      padding: 1rem;
+      h3{
+        color: $textColor;
+        padding-bottom: 1rem;
+      }
+      .project-links{
+        padding-bottom: 1rem;
+        svg{
+          color: $text2Color;
+          width: 20px;
+          height: 20px; 
+          margin-right: 10px;
+
+          &:hover{
+            color: $secColor;
+          }
+        }
+      }
+    }
+  } 
+}
 
 
 
