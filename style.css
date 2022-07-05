@@ -400,6 +400,7 @@ header .resumebutton:hover {
   width: 100%;
   z-index: -1;
   color: #ccd6f6;
+  white-space: nowrap;
 }
 
 .section-title::after {
@@ -424,7 +425,7 @@ header .resumebutton:hover {
     font-size: 1.4rem;
   }
   .section-title::after {
-    width: 16rem;
+    width: 9rem;
   }
   .section-numbering {
     font-size: 1rem;
@@ -436,7 +437,7 @@ header .resumebutton:hover {
     font-size: 1.3rem;
   }
   .section-title::after {
-    width: 10rem;
+    width: 100%;
   }
   .section-numbering {
     font-size: 1rem;
@@ -627,6 +628,15 @@ header .resumebutton:hover {
   color: #64ffda;
 }
 
+@media (max-width: 500px) {
+  #experience .experience-wrapper .each-expwrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 #work .work-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -648,7 +658,7 @@ header .resumebutton:hover {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  width: 45%;
+  width: 48%;
   background-color: #112240;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -661,8 +671,8 @@ header .resumebutton:hover {
 #work .each-work:hover {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 #work .each-work:hover .eachwork-image img {
@@ -707,6 +717,18 @@ header .resumebutton:hover {
 
 #work .each-work .eachwork-brief .project-links svg:hover {
   color: #64ffda;
+}
+
+@media (max-width: 680px) {
+  #work .work-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #work .work-wrapper .each-work {
+    width: 100%;
+  }
 }
 
 #contact h4 {
@@ -863,6 +885,26 @@ header .resumebutton:hover {
 
 #contact .contact-wrapper form button[type=submit]:hover {
   background-color: rgba(100, 255, 218, 0.1);
+}
+
+@media (max-width: 800px) {
+  #contact h2 {
+    font-size: 2.5rem;
+  }
+  #contact .contact-wrapper form input,
+  #contact .contact-wrapper form textarea {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  #contact h2 {
+    font-size: 2rem;
+  }
+  #contact .contact-wrapper form input,
+  #contact .contact-wrapper form textarea {
+    width: 70%;
+  }
 }
 
 footer p {

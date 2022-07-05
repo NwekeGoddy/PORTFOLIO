@@ -397,6 +397,7 @@ header {
   width: 100%;
   z-index: -1;
   color: $textColor;
+  white-space: nowrap;
 
   &::after {
     content: "";
@@ -422,7 +423,7 @@ header {
   .section-title {
     font-size: 1.4rem;
     &::after {
-      width: 16rem;
+      width: 9rem;
     }
   }
   
@@ -436,7 +437,7 @@ header {
   .section-title {
     font-size: 1.3rem;
     &::after {
-      width: 10rem;
+      width: 100%;
     }
   }
   
@@ -632,6 +633,21 @@ header {
   }
 }
 
+
+//Media Query Experience Section (TABLET)
+@media (max-width: 800px) {
+  //nothing for now
+
+}
+
+
+//Media Query Experience Section (MOBILE)
+@media (max-width: 500px) {
+  #experience .experience-wrapper .each-expwrapper{
+     flex-direction: column;
+  }
+}
+
 // Work Section  -------------------------------------------------
 #work{
 
@@ -651,7 +667,7 @@ header {
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 45%;
+    width: 48%;
     background-color: $cardbackgroundColor;
     height: fit-content;
     overflow: hidden;
@@ -661,7 +677,7 @@ header {
  
     &:hover {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      transform: translateY(3px);
+      transform: translateY(-3px);
 
       .eachwork-image img{ 
         opacity: 0.9;
@@ -706,6 +722,23 @@ header {
   } 
 }
 
+//Media Query Work Section (TABLET)
+@media (max-width: 800px) {
+  //nothing for now
+
+}
+
+
+//Media Query  Work Section (MOBILE)
+@media (max-width: 680px) {
+  #work .work-wrapper {
+    flex-direction: column;
+
+    .each-work{
+      width: 100%;
+    }
+  }
+}
 
 
 // Contact Section -------------------------------------------------
@@ -840,6 +873,31 @@ header {
   }
 }
 
+// Media Query Contact Section (TABLET)
+@media (max-width: 800px) {
+  #contact h2 {
+    font-size: 2.5rem;
+  }
+  
+  #contact .contact-wrapper form input,
+  #contact .contact-wrapper form textarea {
+    width: 70%;
+  }
+}
+
+
+//Media Query Contact Section (MOBILE)
+@media (max-width: 500px) {
+  #contact h2 {
+    font-size: 2rem;
+  }
+
+  #contact .contact-wrapper form input,
+  #contact .contact-wrapper form textarea {
+    width: 70%;
+  }
+}
+
 // footer Section -------------------------------------------------
 
 footer{
@@ -859,7 +917,7 @@ footer{
 
 
 
-// Media Query Side Social Links (TABLET)
+// // Media Query Side Social Links (TABLET)
 // @media (max-width: 800px) {
 
 
