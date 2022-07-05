@@ -901,13 +901,25 @@ header {
 // footer Section -------------------------------------------------
 
 footer{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 3.5rem;
+
+  .socials-footer{
+    display: none;
+  }
+
   p{
     color: $text2Color;
     text-align: center;
     font-family: $fontStack2;
     font-size: 0.8rem;
     font-weight: 200;
-    margin: 3rem 0rem 1rem 0rem;
+    margin: 1rem 0rem 1.5rem 0rem;
 
     &:hover{
       color: $secColor
@@ -916,15 +928,46 @@ footer{
 }
 
 
+// Media Query Footer (TABLET)
+@media (max-width: 800px) {
+  footer .socials-footer {
+    display: block;
 
-// // Media Query Side Social Links (TABLET)
-// @media (max-width: 800px) {
+    p{
+      margin: 0rem 0rem 1.5rem 0rem;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      li {
+        padding-bottom: 1rem;
+        a {
+          font-family: $fontStack2;
+          svg {
+            color: $textColor;
+            width: 1.3rem;
+            height: 1.3rem;
+            transition: $transition;
+
+            &:hover {
+              color: $secColor;
+              transform: translateY(0.1rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 
-// }
+//Media Query Footer (MOBILE)
+@media (max-width: 500px) {
 
-
-// //Media Query Side Social Links (MOBILE)
-// @media (max-width: 500px) {
-
-// }
+}
