@@ -42,6 +42,7 @@
 
 // Brand Colors
 $primaryColor: #0a192f;
+// $primaryColor: #000900;
 $secColor: #64ffda;
 $textColor: #ccd6f6;
 $text2Color: #8892b0;
@@ -94,7 +95,7 @@ body {
   transform-origin: bottom left;
 }
 
-// Navigation section
+// Navigation section -------------------------------------------------
 header {
   .logo-wrapper img {
     height: 3rem;
@@ -156,7 +157,21 @@ header {
   }
 }
 
-// Side Social Links
+//Media Query for Nav (TABLET)
+@media (max-width: 800px) {
+  .navbar-links{
+    display: none;
+  }
+}
+
+//Media Query for Nav (MOBILE)
+@media (max-width: 500px) {
+  #navbar{
+    padding: 1rem 1.7rem;
+  }
+}
+
+// Side Social Links -------------------------------------------------
 .fixedsocials {
   .socials {
     display: flex;
@@ -243,7 +258,38 @@ header {
   padding-top: 10rem;
 }
 
-// Hero Section
+//Media Query Side Social Links (TABLET)
+@media (max-width: 800px) {
+
+  //remove side social links on tablex view
+  .fixedsocials {
+    .socials {
+      display: none;
+    }
+
+    .email {
+      display: none;
+    }
+  }
+
+  .desktoppad {
+    margin: auto 4rem;
+    
+  }
+
+}
+
+
+//Media Query Side Social Links (MOBILE)
+@media (max-width: 500px) {
+//reduced thhe nav margin
+  .desktoppad {
+    margin: auto 2rem;
+  }
+}
+
+
+// Hero Section -------------------------------------------------
 .hero {
   display: flex;
   flex-direction: column;
@@ -305,7 +351,41 @@ header {
   }
 }
 
-//General Section Styling
+//Media Query Hero Section (TABLET)
+@media (max-width: 800px) {
+  //none for now
+  .hero {
+    .name {
+      font-size: 4rem;
+    }
+
+    .build {
+      font-size: 4rem;
+    }
+  }
+}
+
+//Media Query Hero Section (MOBILE)
+@media (max-width: 500px) {
+  .hero {
+    .name {
+      font-size: 2rem;
+    }
+    .introname {
+      font-size: 0.9rem;
+    }
+    .build {
+      font-size: 2rem;
+    }
+    .about { 
+      font-size: 1rem;
+      line-height: 1.3rem;
+    }
+  }
+}
+
+
+//General Section Styling -------------------------------------------------
 .section-title {
   font-family: $fontStack1;
   font-size: 1.6rem;
@@ -336,7 +416,36 @@ header {
   padding-right: 0.5rem;
 }
 
-// About Me Section
+//Media Query General Section (MOBILE)
+@media (max-width: 800px) {
+
+  .section-title {
+    font-size: 1.4rem;
+    &::after {
+      width: 16rem;
+    }
+  }
+  
+  .section-numbering {
+    font-size: 1rem;
+  }
+}
+
+//Media Query General Section (MOBILE)
+@media (max-width: 500px) {
+  .section-title {
+    font-size: 1.3rem;
+    &::after {
+      width: 10rem;
+    }
+  }
+  
+  .section-numbering {
+    font-size: 1rem;
+  }
+}
+
+// About Me Section -------------------------------------------------
 
 #about {
   margin-top: 5rem;
@@ -428,7 +537,34 @@ header {
 }
 
 
-//Experience Section
+//Media Query About me Section (MOBILE)
+@media (max-width: 800px) {
+  #about {
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .about-img {
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  #about .about-wrapper .about-img img {
+    width: 250px;
+  }
+}
+
+
+//Media Query About me Section (MOBILE)
+@media (max-width: 500px) {
+  #about .about-wrapper .about-img img {
+    width: 200px;
+  }
+}
+
+
+//Experience Section -------------------------------------------------
 #experience{
   .section-title{
     padding-bottom: 3rem;
@@ -496,7 +632,7 @@ header {
   }
 }
 
-// Work Section
+// Work Section  -------------------------------------------------
 #work{
 
   .work-wrapper{
@@ -517,10 +653,19 @@ header {
     transition: 0.3s;
     width: 45%;
     background-color: $cardbackgroundColor;
+    height: fit-content;
+    overflow: hidden;
+    transition: $transition;
+    
 
  
     &:hover {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      transform: translateY(3px);
+
+      .eachwork-image img{ 
+        opacity: 0.9;
+      }
 
       .eachwork-brief h3{
         color: $secColor;
@@ -534,6 +679,7 @@ header {
       img{ 
         width: 100%;
         height: 100%;
+        opacity: 0.7;
       }
     }
 
@@ -562,7 +708,7 @@ header {
 
 
 
-// Contact Section
+// Contact Section -------------------------------------------------
 #contact{
   // padding-top: 10rem;
 
@@ -694,7 +840,7 @@ header {
   }
 }
 
-// footer Section
+// footer Section -------------------------------------------------
 
 footer{
   p{
@@ -710,3 +856,17 @@ footer{
     }
   }
 }
+
+
+
+// Media Query Side Social Links (TABLET)
+// @media (max-width: 800px) {
+
+
+// }
+
+
+// //Media Query Side Social Links (MOBILE)
+// @media (max-width: 500px) {
+
+// }
