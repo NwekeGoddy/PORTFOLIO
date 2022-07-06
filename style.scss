@@ -133,6 +133,14 @@ header {
     }
   }
 
+  @media (max-width: 800px) {
+    .hamburger{
+      display: block;
+      }
+  }
+
+
+
   nav {
     background-color: $primaryColor;
     height: 100px;

@@ -116,6 +116,12 @@ header .hamburger .change.bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
+@media (max-width: 800px) {
+  header .hamburger {
+    display: block;
+  }
+}
+
 header nav {
   background-color: #0a192f;
   height: 100px;
