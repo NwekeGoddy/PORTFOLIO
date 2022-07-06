@@ -477,12 +477,36 @@ header .resumebutton:hover {
 }
 
 .hero .herowork-button:hover {
+  -webkit-animation: roundedge 1s Linear;
+          animation: roundedge 1s Linear;
   background-color: rgba(100, 255, 218, 0.1);
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em #64ffda;
+          box-shadow: 0 0.5em 0.5em -0.4em #64ffda;
+  -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
 }
 
 .hero .company {
   color: #64ffda;
   text-decoration: none;
+}
+
+@-webkit-keyframes roundedge {
+  0% {
+    border-radius: 4px;
+  }
+  100% {
+    border-radius: 6px;
+  }
+}
+
+@keyframes roundedge {
+  0% {
+    border-radius: 4px;
+  }
+  100% {
+    border-radius: 6px;
+  }
 }
 
 @media (max-width: 800px) {

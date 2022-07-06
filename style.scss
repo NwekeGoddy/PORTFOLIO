@@ -184,10 +184,11 @@ header {
         $secColor,
         0.9
       ); //to make a color transparent
+
+    
     }
   }
 }
-
 
 
 // mobilenav Section
@@ -462,19 +463,30 @@ header {
     width: fit-content;
     margin-top: 3rem;
     font-family: $fontStack2;
+    
 
     &:hover {
+      animation: roundedge 1s Linear;
       background-color: transparentize(
         $secColor,
         0.9
       ); //to make a color transparent
+
+      box-shadow: 0 0.5em 0.5em -0.4em $secColor;
+      transform: translateY(-0.25em);
     }
+
   }
 
   .company {
     color: $secColor;
     text-decoration: none;
   }
+}
+
+@keyframes roundedge {
+  0%   {border-radius: 4px;}
+  100% {border-radius: 6px;}
 }
 
 //Media Query Hero Section (TABLET)
