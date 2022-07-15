@@ -21,19 +21,27 @@ let bar3 = document.querySelector(".bar3");
 let asideMobile = document.querySelector(".aside-mobilenav");
 let mobilelink = document.querySelectorAll(".mobile-navbar-links li a")
 
-hamburger.addEventListener("click", function() {
+let backgroundcover = document.querySelector(".dark-cover");
+
+const toggleAll = function(){
   bar1.classList.toggle("change");
   bar2.classList.toggle("change");
   bar3.classList.toggle("change");
   asideMobile.classList.toggle("displayToggle"); 
+  backgroundcover.classList.toggle("displayToggle");
+} 
+
+hamburger.addEventListener("click", function() {
+  toggleAll();
+});
+
+backgroundcover.addEventListener("click", function() {
+  toggleAll();
 });
 
 for(let i = 0 ; i < mobilelink.length ; i++){
 mobilelink[i].addEventListener("click", function() {
-  bar1.classList.remove("change");
-  bar2.classList.remove("change");
-  bar3.classList.remove("change");
-  asideMobile.classList.remove("displayToggle"); 
+  toggleAll();
 });}
 
 
