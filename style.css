@@ -866,7 +866,7 @@ header .resumebutton:hover {
   }
   #contact .contact-wrapper form input,
 #contact .contact-wrapper form textarea {
-    width: 70%;
+    width: 100%;
   }
 }
 footer {
