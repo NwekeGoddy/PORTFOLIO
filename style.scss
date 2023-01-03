@@ -891,7 +891,10 @@ header {
     }
 
     .eachwork-brief {
-      padding: 1rem;
+      padding: 1rem 1rem 0rem 1rem;
+      display: flex;
+      gap: 10px ;
+      align-items: center;
       h3 {
         color: $textColor;
         padding-bottom: 1rem;
@@ -902,14 +905,28 @@ header {
           color: $text2Color;
           width: 20px;
           height: 20px;
-          margin-right: 10px;
+          margin-right: 1px;
 
           &:hover {
             color: $secColor;
           }
         }
       }
+
+     
     }
+  }
+}
+
+.project-icons img{
+  padding: 0rem 1rem 1rem 1rem;
+  height: 50px;
+}
+
+@media (max-width: 800px) {
+  .project-icons img{
+   
+    height: 40px;
   }
 }
 
